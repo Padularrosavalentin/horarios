@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Horarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .results {
+            margin-top: 25px;
+            border-top: 2px solid #eee;
+            padding-top: 20px;
+        }
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        .city {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .time {
+            color: #555;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/temporal-polyfill/0.3.0/global.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Conversor de Horario</h1>
+    
+    <div class="form-group">
+        <label for="fechaTextoInput">Ingresa la fecha y hora :</label>
+        <input type="text" id="fechaTextoInput" placeholder="Ej: 18 de junio de 2026 a las 18:05 horas" required>
+    </div>
+    
+    <button id="convertirBtn">Convertir Horarios</button>
+
+    <div class="results" id="resultadosContainer" style="display: none;">
+        <h3>Equivalencias:</h3>
+        <div class="result-item">
+            <span class="city">Madrid 🇪🇸</span>
+            <span class="time" id="resMadrid">-</span>
+        </div>
+        <div class="result-item">
+            <span class="city">Nueva York 🇺🇸</span>
+            <span class="time" id="resNY">-</span>
+        </div>
+        <div class="result-item">
+            <span class="city">Shanghái 🇨🇳</span>
+            <span class="time" id="resShanghai">-</span>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
